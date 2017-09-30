@@ -29,6 +29,10 @@
                                 <color key="textColor" red="0.95957739582727786" green="0.99054364143706752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="diamond" translatesAutoresizingMaskIntoConstraints="NO" id="yXu-Vs-3KW">
+                                <rect key="frame" x="53" y="250" width="270" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.20392156862745098" green="0.28627450980392155" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -39,4 +43,7 @@
             <point key="canvasLocation" x="-79.200000000000003" y="128.18590704647679"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="diamond" width="515" height="377"/>
+    </resources>
 </document>
