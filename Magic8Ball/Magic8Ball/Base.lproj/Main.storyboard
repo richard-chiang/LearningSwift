@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="TrebuchetMS.ttf">
+            <string>TrebuchetMS</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Magic8Ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask Me Anything" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-dI-0Qg">
+                                <rect key="frame" x="45" y="85" width="285" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="EC6-K5-YTS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball1" translatesAutoresizingMaskIntoConstraints="NO" id="eEY-x3-bLU">
+                                <rect key="frame" x="67" y="181" width="240" height="289"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ICY-hE-xEZ">
+                                <rect key="frame" x="149" y="521" width="76" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="qc9-IL-tpg"/>
+                                </constraints>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Ask">
+                                            <attributes>
+                                                <color key="NSColor" red="0.95957739580000001" green="0.99054364139999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="50" name="TrebuchetMS"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="askBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pdb-Gf-Qpf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.66666666666666663" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VP2-dI-0Qg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="DAd-eE-yX9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ICY-hE-xEZ" secondAttribute="bottom" constant="70" id="IGe-bN-PrZ"/>
+                            <constraint firstItem="eEY-x3-bLU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="L8r-2f-2ya"/>
+                            <constraint firstItem="eEY-x3-bLU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UUn-2e-qCA"/>
+                            <constraint firstItem="eEY-x3-bLU" firstAttribute="top" secondItem="VP2-dI-0Qg" secondAttribute="bottom" constant="50" id="V0a-ql-SKu"/>
+                            <constraint firstItem="ICY-hE-xEZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="149" id="cNK-gG-hOq"/>
+                            <constraint firstItem="VP2-dI-0Qg" firstAttribute="centerX" secondItem="eEY-x3-bLU" secondAttribute="centerX" id="gEF-3i-qLC"/>
+                            <constraint firstItem="VP2-dI-0Qg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="jZj-T1-jaM"/>
+                            <constraint firstItem="ICY-hE-xEZ" firstAttribute="top" secondItem="eEY-x3-bLU" secondAttribute="bottom" constant="51" id="wsm-yL-dQo"/>
+                            <constraint firstItem="eEY-x3-bLU" firstAttribute="centerX" secondItem="ICY-hE-xEZ" secondAttribute="centerX" id="yHI-Rw-fT4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ballImageView" destination="eEY-x3-bLU" id="ThM-ef-Igb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ball1" width="460" height="412"/>
+    </resources>
+</document>
