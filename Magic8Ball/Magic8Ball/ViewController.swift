@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     
     @IBAction func askBtnClicked(_ sender: UIButton) {
         refreshBallImage()
-    }
+    } 
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         refreshBallImage()
