@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //Place your instance variables here
     var allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
+    var questionNum = 0
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Load first question
-        questionLabel.text = allQuestions.getNextQuestion().questionText
+        questionLabel.text = allQuestions.list[questionNum].questionText
         
     }
 
@@ -44,18 +45,36 @@ class ViewController: UIViewController {
     
     
     func updateUI() {
-        questionLabel.text = allQuestions.getCurrentQuestion().questionText
+        questionLabel.text = allQuestions.list[questionNum].questionText
     }
     
 
     func nextQuestion() {
-        _ = allQuestions.getNextQuestion()
+        if questionNum == allQuestions.list.count - 1 {
+            // prompt restart
+            let alert = UIAlertController(title: "Congratulation", message: "You have finished the quiz. Do you wish to start over again?", preferredStyle: .alert)
+            
+            let restart = UIAlertAction(title: "Restart", style: .default, handler:
+            {(UIAlertAction) in
+                    self.startOver()})
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            
+            alert.addAction(restart)
+            alert.addAction(cancel)
+            
+            present(alert, animated: true, completion: nil)
+            
+        } else {
+            questionNum += 1
+        }
+        
         updateUI()
     }
     
     
     func checkAnswer() {
-        let answer = allQuestions.getCurrentQuestion().answer
+        let answer = allQuestions.list[questionNum].answer
         
         (answer == pickedAnswer) ? print("You are correct") : print("You are wrong")
         nextQuestion()
@@ -63,8 +82,8 @@ class ViewController: UIViewController {
     
     
     func startOver() {
-       allQuestions = QuestionBank()
-       _ = allQuestions.getNextQuestion()
+        questionNum = 0
+        updateUI()
     }
     
 
