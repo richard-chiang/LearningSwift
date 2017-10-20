@@ -10,8 +10,11 @@ import Foundation
 
 class QuestionBank {
     var list = [Question]()
+    private var currentQuestionNum: Int
     
     init() {
+        currentQuestionNum = -1
+        
         let item = Question(text: "Valentine\'s day is banned in Saudi Arabia.", correctAnswer: true)
         
         // Add the Question to the list of questions
@@ -40,6 +43,17 @@ class QuestionBank {
         list.append(Question(text: "No piece of square dry paper can be folded in half more than 7 times.", correctAnswer: false))
         
         list.append(Question(text: "Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.", correctAnswer: true))
+    }
+    
+    func getNextQuestion() -> Question {
+        currentQuestionNum += 1
+        currentQuestionNum %= list.count
+        
+        return list[currentQuestionNum]
+    }
+    
+    func getCurrentQuestion() -> Question {
+        return list[currentQuestionNum]
     }
     
 }
