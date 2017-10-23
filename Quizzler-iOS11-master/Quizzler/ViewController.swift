@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
     var questionNum = 0
+    var score = 0
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -47,6 +48,8 @@ class ViewController: UIViewController {
     func updateUI() {
         questionLabel.text = allQuestions.list[questionNum].questionText
         progressLabel.text = "\(questionNum + 1) / \(allQuestions.list.count)"
+        scoreLabel.text = "Score: \(score) / \(allQuestions.list.count)"
+        
     }
     
 
@@ -77,13 +80,14 @@ class ViewController: UIViewController {
     func checkAnswer() {
         let answer = allQuestions.list[questionNum].answer
         
-        (answer == pickedAnswer) ? print("You are correct") : print("You are wrong")
+        score = (answer == pickedAnswer) ? score + 1: score
         nextQuestion()
     }
     
     
     func startOver() {
         questionNum = 0
+        score = 0
         updateUI()
     }
     
