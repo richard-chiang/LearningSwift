@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Load first question
-        questionLabel.text = allQuestions.list[questionNum].questionText
+        updateUI()
         
     }
 
@@ -46,6 +46,7 @@ class ViewController: UIViewController {
     
     func updateUI() {
         questionLabel.text = allQuestions.list[questionNum].questionText
+        progressLabel.text = "\(questionNum + 1) / \(allQuestions.list.count)"
     }
     
 
